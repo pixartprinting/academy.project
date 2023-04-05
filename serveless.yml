@@ -1,0 +1,31 @@
+service: <nome_del_team>
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: ${opt:stage, 'dev'}
+  region: eu-south-1
+  timeout: 30 # seconds
+  memorySize: 128 # MB
+  versionFunctions: false
+  logRetentionInDays: 1
+
+  environment:
+
+  iam:
+    role:
+      statements:
+
+custom:
+  account: 946412081729
+
+package:
+  patterns:
+    - '!./**'
+  individually: true
+
+functions:
+
+
+resources:
+  Resources:
